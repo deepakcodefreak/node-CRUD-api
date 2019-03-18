@@ -13,6 +13,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
+const port  = process.env.PORT|3000;
+
 
 app.use(bodyParser.json())
 
@@ -154,8 +156,8 @@ app.delete('/users/me/token',authenticate,(req,res)=>{
 })
 
 
-app.listen(3000,()=>{
-    console.log('App is Live on PORT 3000')
+app.listen(port,()=>{
+    console.log(`App is Live on PORT ${port}`)
 })
 
 
